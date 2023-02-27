@@ -205,7 +205,7 @@ class Validator {
     }
     
     protected static function checkByValue($value, $regexp) {
-        if (preg_match('/^' . $regexp . '$/u', $value) == FALSE) {
+        if (preg_match('/^' . $regexp . '$/u', $value??'') == FALSE) {
             throw new \BankId\Merchant\Library\CommunicatorException('incorrect value: ' . $value);
         }
     }
